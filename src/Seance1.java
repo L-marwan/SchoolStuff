@@ -1,4 +1,6 @@
 import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 
@@ -59,9 +61,21 @@ public class Seance1 {
 		 return t;	
 	}
 	
+	public static void ecrire (File f, String [] s) throws Exception {
+		// cette methode permet d'ecrire dans un fichier sans suprimmer ce qu'il ya deja dedans
+		PrintWriter p = new PrintWriter ( new FileWriter (f, true));
+		for (String w : s) p.println(w);
+		p.close();
+	}
+	
+	
+	
 	public static void main (String[] args) throws Exception{
 		File f= new File ("test.txt");
+		File f1= new File ("test1.txt");
 		String[] t= tran(f);
+		ecrire(f1 ,t);
+		t = tran (f1);
 
 		for (String i : t ) System.out.println( i +"\n");
 		
