@@ -3,14 +3,3 @@ fichier
 file
 throws
 exeption
-225
-another
-change
-test
-fichier
-file
-throws
-exeption
-225
-another
-change

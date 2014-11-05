@@ -1,6 +1,6 @@
 import java.io.File;
-import java.io.FileWriter;
 import java.io.PrintWriter;
+import java.util.Random;
 import java.util.Scanner;
 
 
@@ -63,21 +63,48 @@ public class Seance1 {
 	
 	public static void ecrire (File f, String [] s) throws Exception {
 		// cette methode permet d'ecrire dans un fichier sans suprimmer ce qu'il ya deja dedans
-		PrintWriter p = new PrintWriter ( new FileWriter (f, true));
+		PrintWriter p = new PrintWriter (f);
 		for (String w : s) p.println(w);
 		p.close();
+	}
+	
+	public static  int [] remplir (int n ){ // fonction qui remplit un tableau de taille i avec des nombres aleatoires
+									// pour tester les rest des methodes de cette classe 
+		int [] T = new int [10];
+		Random rand = new Random ();
+		for (int i =0 ; i < T.length ; i++) T[i] = rand.nextInt() % 100; // pour avoir des valeur entre -100 et 100
+		
+		return T;
+		
 	}
 	
 	
 	
 	public static void main (String[] args) throws Exception{
-		File f= new File ("test.txt");
-		File f1= new File ("test1.txt");
-		String[] t= tran(f);
-		ecrire(f1 ,t);
-		t = tran (f1);
-
-		for (String i : t ) System.out.println( i +"\n");
+		
+		int [] T = remplir(10); // pour avoir un tableau de taille 10 ( on ne doit pas remplir le tableau nous méme chaque foi )
+		
+		for (int i : T) System.out.print( i + ";"); // pour voir le tableau
+		System.out.println(" ");
+		System.out.println("l'index du min du tab est : " + min(T,0,T.length)); // tester la méthode min 
+		System.out.println("------");
+		
+		int x = 15; // le valeur a cherecher
+	
+		T[5]=15; // pour etre sur que la valeur est dans le tab , on peut supp cette ligne
+		System.out.print( "le nouveau tab : "); 
+		for (int i : T) System.out.print( i + ";"); 
+		System.out.println("x se trouve à l'index : "+localiser(x,T,0,T.length));
+		
+		
+		File f= new File ("test.txt"); //ouvrir le fichier test.txt, ou bien le créer s'il n'existe pas
+		File f1= new File ("test1.txt"); // le meme pour test1.txt
+		String[] t= tran(f); // créer un tabeau de String a partir des mot du fichier test.txt
+		ecrire(f1 ,t); // remplir le ficher test1.txt avec les mots du t 
+		t = tran (f1); 
+		System.out.println("------");
+		System.out.println("Le fichier test1.txt contient : "); 
+		for (String i : t ) System.out.println( i +"\n"); // afficher le contenu du tab t 
 		
 		
 	}
