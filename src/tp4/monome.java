@@ -22,11 +22,11 @@ public class monome {
 		
 	}
 	
-	public monome somme(monome m){
+/*	public monome somme(monome m){
 		
 		if (m.degre == degre) return new monome ( degre, coeff + m.coeff);
 		return 
-	}
+	}*/
 	
 	
 }

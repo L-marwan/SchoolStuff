@@ -1,1 +1,3 @@
-test fichier file throws exeption 
+Etud1 10000 12.5 2.3 2 5
+Etud2 10001 13 20 13 14
+Etud3 9001 12 3 17 10.23
