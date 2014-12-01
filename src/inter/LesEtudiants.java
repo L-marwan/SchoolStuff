@@ -18,6 +18,7 @@ public class LesEtudiants extends Abr <Etudiant>{
 			double n4 = Double.parseDouble(s.next());
 			inserer ( new Etudiant (n,c,n1,n2,n3,n4));
 		}
+                s.close();
 	}
 	
 	public LinkedList<LinkedList<Etudiant>> groupes (){

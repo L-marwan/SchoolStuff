@@ -5,17 +5,18 @@ import java.util.LinkedList;
 
 
 public class Testing {
-	public static void main (String[] args) throws Exception{
+	/*public static void main (String[] args) throws Exception{
 		LesEtudiants l = new LesEtudiants();
-		File f = new File ("test.txt");
+		File f;
+                f = new File ("C:\\d\\test.txt");
 		l.lire(f);
-		System.out.print(l.toString());
-		LinkedList <LinkedList<Etudiant>> t =l.groupes();
-		for (LinkedList<Etudiant> li: t){
+		//System.out.print(l.toString());
+		LinkedList <Etudiant> t =l.makeList();
+		//for (LinkedList<Etudiant> li: t){
 			System.out.println("-----");
-			for (Etudiant e : li) System.out.println(e + " "+ e.moyenne());
-		}
+			for (Etudiant e : t) System.out.println(e.code +" "+e.nom);
+		//}*/
 		
 		
-	}
+	//}
 }

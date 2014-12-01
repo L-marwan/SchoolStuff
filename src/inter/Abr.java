@@ -52,6 +52,11 @@ public class Abr <T extends Comparable<T>> implements Iterable<Noeud <T>>,Clonea
 		infixe ( racine , l );
 		return l;
 	}
+	public LinkedList<T> makeList (){
+		LinkedList<T> l = new LinkedList<T>();
+		for (Noeud<T> n : this) l.add(n.cle);
+		return l;
+	}
 	// Iterator :----------------
 	@Override
 	public Iterator<Noeud <T>> iterator() {

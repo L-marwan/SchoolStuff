@@ -16,6 +16,7 @@ public class Noeud <T> implements Cloneable {
 		this.fg = fg;
 		this.fd = fd;
 	}
+
 	
 	public Noeud<T> clone () throws CloneNotSupportedException{
 		

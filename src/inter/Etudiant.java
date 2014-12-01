@@ -4,8 +4,8 @@ package inter;
 
 public class Etudiant implements Comparable<Etudiant>{
 
-    private String nom;
-    private long code;
+    String nom;
+    long code;
     final  int Nbnotes=4;
     double[] notes=new double[Nbnotes];
     
